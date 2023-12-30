@@ -1,0 +1,23 @@
+<div class="container-fluid">
+    <h2>Product Details</h2>
+    <dl>
+        <dt>Title</dt>
+        <dd>{{Product.title}}</dd>
+        <dt>Price</dt>
+        <dd>{{Product.price}}</dd>
+        <dt>
+            <button (click)="ToggleClick()" class="btn btn-primary w-25">{{buttonText}}
+
+            </button>
+            <p>Toggle</p>
+        </dt>
+        <dd *ngIf="true;then thenBlock"></dd>
+        <ng-template #description>
+            <p class="w-25">{{Product.description}}</p>
+        </ng-template>
+        <ng-template #preview>
+            <img [src]="Product.image" width="200" height="200">
+        </ng-template>
+    </dl>
+
+</div>

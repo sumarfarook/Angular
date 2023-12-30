@@ -1,0 +1,25 @@
+
+<div class="container-fluid">
+    <form #frmRegister="ngForm">
+        <dl>
+            <dt>UserName</dt>
+            <dd>
+                <input type="text" name="UserName" ngModel #UserName="ngModel">
+            </dd>
+            <dt>Age</dt>
+            <dd>
+                <input type="number" name="Age" ngModel #Age="ngModel">
+            </dd>
+            
+        </dl>
+        <button>Register</button>
+
+    </form>
+    <hr><br>
+    <h2>Details</h2>
+    UserName:{{UserName.value}} (or)<br> 
+    User Name:{{frmRegister.value.UserName}}<br>
+    Age:{{frmRegister.value.Age}} (or)<br>
+    Age:{{Age.value}}
+
+</div>

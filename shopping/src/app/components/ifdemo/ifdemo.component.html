@@ -1,0 +1,42 @@
+<div class="container-fluid">
+    <h2>Register User</h2>            <!-- ngIf -->
+    <div class="mb-2">
+        <label class="form-label">User Name
+
+        </label>
+        <div>
+            <input type="text" required name="UserName" ngModel #UserName="ngModel">
+            <div *ngIf="UserName.invalid" class="text-danger">Name Required
+
+            </div>
+        </div>
+
+    </div>
+    <h2>Product Preview</h2>
+    <div class="mb-2">
+        <div class="form-switch">
+            <input type="checkbox" ngModel name="Preview" #Preview="ngModel" class="form-check-input">Toggle Preview
+        </div>
+        <div *ngIf="Preview.value">
+            <img src="assets/back.jfif" width="100" height="100">
+        </div>
+
+    </div>
+</div>
+<div class="mt-5">     <!-- ngIf-Else -->
+    <h3>NgIf Else</h3>
+    <div *ngIf="false;else item">If Block
+    </div>
+    <ng-template #item>Else Block</ng-template>
+</div>
+<div class="mt-4"> 
+    <h3>NgIf - Then- Else</h3>          <!-- ngIf-then-else  -->
+    <div *ngIf="true;then ThenBlock else ElseBlock">
+    </div>
+    <ng-template #ThenBlock>
+        NgIf is a Used in Adding Elements in to DOM.
+    </ng-template>
+    <ng-template #ElseBlock>
+        NgIf Is Used in Remove Element from DOM
+    </ng-template>
+</div>

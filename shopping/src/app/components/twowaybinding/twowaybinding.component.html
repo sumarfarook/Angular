@@ -1,0 +1,23 @@
+
+<div class="container-fluid">
+    <h2>Product Details</h2>
+    <dl>
+        <dt>Title</dt>
+        <dd>{{Product.title}}/dd>
+            <dt>Preview</dt>
+            <dd>
+                <img [src]="Product.image"width="100" height="100">
+            </dd>
+            <dt>Price</dt>
+            <dd>${{Product.price}}</dd>
+            <dt>Rating</dt>
+            <dd>
+                <span class="bi bi-star-fill text-success"></span>{{Product.rating.rate}} [{{Product.rating.count}}]
+            </dd>
+    </dl>
+    <div>
+        <button (click)="PrevClick()" class="btn btn-primary me-2">&laquo;</button>
+        <button (click)="NextClick()" class="btn btn-primary">&raquo;</button>
+    </div>
+
+</div>

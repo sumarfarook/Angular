@@ -1,0 +1,48 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4">
+            <dl>
+                <dt>Name</dt>
+                <dd>
+                    <input type="text" class="form-control" name="Name" ngModel #Name="ngModel" required>
+                </dd>
+                <dt>Price</dt>
+                <dd>
+                    <input type="number" class="form-control" name="Price" ngModel #Price="ngModel">
+                    
+                </dd>
+                <dd>Stock</dd>
+                <dd class="form-switch">
+                    <input type="checkbox"class=form-check-input name="Stock" ngModel #Stock="ngModel">Available
+                </dd>
+                <dt>City</dt>
+                <dd>
+                    <select class="form-select" name="City" ngModel #City="ngModel">
+                        <option>Hyd</option>
+                        <option>Chennai</option>
+                        <option>Banglore</option>
+
+                    </select>
+                </dd>
+            </dl>
+            <button [disabled]="Name.invalid" class="btn btn-primary w-100">Register
+
+            </button>
+        </div>
+        <div class="col-8">
+            <h2>Details</h2>
+            <dl>
+            <dt>Name</dt>
+            <dd>{{Name.value}}</dd>
+            <dt>Price</dt>
+            <dd>{{Price.value}}</dd>
+            <dt>Stock</dt>
+            <dd>{{Stock.value}}</dd>
+            <dt>City</dt>
+            <dd>{{City.value}}</dd>
+            </dl>
+        </div>
+
+    </div>
+
+</div>

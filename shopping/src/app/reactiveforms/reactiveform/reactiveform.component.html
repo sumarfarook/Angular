@@ -1,0 +1,48 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <h2>Register Form</h2>
+            <form [formGroup]="frmRegister" (submit)="SubmitClicked(frmRegister.value)">
+                <dl>
+                    <dt>Name</dt>
+                    <dd><input type="text" formControlName="Name" ></dd>
+                    <dt>Age</dt>
+                    <dd><input type="text" formControlName="Age"></dd>
+                    <div formGroupName="frmAddress">
+                        <h3>Contact Details</h3>
+                        <dl>
+                            <dt>City</dt>
+                            <dd>
+                                <select formControlName="City">
+                                    <option>Hyd</option>
+                                    <option>Delhi</option>
+                                </select>
+                            </dd>
+                            <dt>Pin</dt>
+                            <dd><input type="textx" formControlName="Pin"></dd>
+                        </dl>
+
+                    </div>
+                </dl>
+                <button class="btn btn-primary">Register</button>
+                <button type="button" (click)="UpdateClicked()" class="btn btn-success">Update</button>
+                
+                
+            </form>
+        </div>
+        <div class="col">
+            <h2>Details</h2>
+            <dl>
+                <dt>Name</dt>
+                <dd>{{frmRegister.value.Name}}</dd>
+                <dt>Age</dt>
+                <dd>{{frmRegister.value.Age}}</dd>
+                <dt>City</dt>
+                <dd>{{City.value}}</dd>
+                <dt>Pin</dt>
+                <dd>{{Pin.value}}</dd>
+            </dl>
+        </div>
+    </div>
+
+</div>

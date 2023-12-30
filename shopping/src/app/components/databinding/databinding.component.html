@@ -1,0 +1,15 @@
+<div class="container-fluid">
+    <input type="text"[value]="UserName">  <!--Property Binding -->
+    <p>{{Password}}</p>                    <!-- Simple Binding -->
+
+    <div class="mt-3">
+        <h3>Two way Data Binding</h3>
+       <dl>                                      <!-- Two way databinding -->        
+        <dt>First Name</dt>                       <!-- Using MVC Model -->
+        <dd><input type="text"[(ngModel)]="FirstName"></dd>
+        
+       </dl>
+       <h4>Hello ! <span>{{FirstName}} How are you ?</span></h4>
+
+    </div>
+</div>

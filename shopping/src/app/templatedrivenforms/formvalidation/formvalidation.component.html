@@ -1,0 +1,43 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <form #frmRegister="ngForm" [ngClass]="{'invalid-style':frmRegister.invalid, 'valid-style':frmRegister.valid}">
+                <h2>Register</h2>
+                <dl>
+                    <dt>UserName</dt>
+                    <dd>
+                        <input type="text" name="UserName" ngModel #UserName="ngModel" required minlength="3">
+                    </dd>
+                    <dt>Age</dt>
+                    <dd>
+                        <input type="number" name="Age" ngModel #Age="ngModel" required>
+                    </dd>
+                    <dt>Mobile</dt>
+                    <dd>
+                        <input type="text" name="Mobile" ngModel #Mobile="ngModel" required pattern="\+91\d{10}">
+                    </dd>
+                </dl>
+                <button [disabled]="frmRegister.invalid">Register</button>
+                <button [disabled]="frmRegister.pristine">Save</button>
+            </form>
+
+        </div>
+        <div class="col">
+            <h2>Form Validations Services </h2>
+            <dl>
+                <dt>Form not Modified</dt>
+                <dd>{{frmRegister.pristine}}</dd>
+                <dt>Form Modified</dt>
+                <dd>{{frmRegister.dirty}}</dd>
+                <dt>Form is Valid</dt>
+                <dd>{{frmRegister.valid}}</dd>
+                <dt>Form is not Valid</dt>
+                <dd>{{frmRegister.invalid}}</dd>
+                <dt>Form Submitted</dt>
+                <dd>{{frmRegister.submitted}}</dd>
+            </dl>
+
+        </div>
+    </div>
+
+</div>

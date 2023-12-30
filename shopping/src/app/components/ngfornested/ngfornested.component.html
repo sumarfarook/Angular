@@ -1,0 +1,45 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6">
+            <h2>Tutorial</h2>
+            <dl>
+            <ng-container *ngFor="let item of topics">
+            <dt>{{item.Title}}</dt>
+            <dd>{{item.Defination}}</dd>
+
+            </ng-container>
+            </dl>
+            <details *ngFor="let item of topics" open>
+            <summary>{{item.Title}}</summary>
+            <p>{{item.Defination}}</p>
+            </details>
+             <fieldset *ngFor="let item of topics">
+            <legend>{{item.Title}}</legend>
+            <p>{{item.Defination}}</p>
+            </fieldset>
+        </div>
+        <div class="col-6">
+            <h2>Menu</h2>
+            <ol>
+                <li *ngFor="let item of menu">
+                    {{item.Category}}
+                    <ul>
+                        <li *ngFor="let data of item.Products">
+                            {{data}}
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+            <h2>Select Categories</h2>
+            <select class="form-select w-50">
+                <optgroup *ngFor="let item of menu" [label]="item.Category">
+                    <option *ngFor="let data of item.Products">
+                        {{data}}
+
+                    </option>
+                </optgroup>
+            </select>
+        </div>
+    </div>
+    
+</div>

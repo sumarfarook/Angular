@@ -1,0 +1,27 @@
+<div class="container-fluid">
+    <h2>Product Details</h2>
+    <dl>
+        <dt>Title</dt>
+        <dd>{{Product.title}}</dd>
+        <dt class="form-switch">
+            <input type="checkbox" class="form-check-input" name="toggel" ngModel #toggel="ngModel">
+            Preview/Details
+        </dt>
+        <dd>
+            <div *ngIf="toggel.value; then PreviewBlock else DetailsBlock"></div>
+            <ng-template #PreviewBlock>
+                <img [src]="Product.image" width="200" height="200">
+            </ng-template>
+            <ng-template #DetailsBlock>
+                <dl>
+                    <dt>Price</dt>
+                    <dd>{{Product.price}}</dd>
+                    <dt>Rating</dt>
+                    <dd><span class="bi bi-star-fill text-success"></span>{{Product.rating.rate}} [{{Product.rating.count}}]</dd>
+                </dl>
+
+            </ng-template>
+        </dd>
+    </dl>
+
+</div>

@@ -1,0 +1,45 @@
+<div class="container-fluid">
+    <header class="bg-danger text-white text-center p-2 m-2">
+        <h1><span class="bi bi-cart4 text-primary"></span>Shopping Cart</h1>
+    </header>
+    <Section class="m-2 row">
+        <nav class="col-2">
+            <div>
+                <label class="form-label">Select Category</label>
+                <div>
+                    <select (change)="CategoryChange($event)" class="form-select">
+                        <option  *ngFor="let item of categories"[value]="item">
+                           {{item|uppercase}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </nav>
+        <main class="col-8">
+            <div class="d-flex flex-wrap overflow-auto" style="height: 500px;">
+                <div class="card p-2 m-2" style="width: 200px;" *ngFor="let item of products">
+                    <img class="card-img-top" [src]="item.image" height="150">
+                    <div class="card-header" style="height: 160px;">
+                        <p>{{item.title}}</p>
+                    </div>
+                    <div class="card-body">
+                        <dl>
+                            <dt>Price</dt>
+                            <dd>{{item.price}}</dd>
+                            <dt>Rating</dt>
+                            <dd>{{item.rating.rate}} [{{item.rating.count}}]</dd>
+                        </dl>
+
+                    </div>
+                    <div class="card-footer">
+                        <button (click)="AddToCartClick(item.id)" class="btn btn-danger w-100"><span class="bi bi-cart2"></span>Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <aside class="col-2">
+            <button class="btn btn-danger w-100"><span class="bi bi-cart"></span>[{{cartCount}}]Cart Items</button>
+        </aside>
+
+    </Section>
+</div>

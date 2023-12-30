@@ -1,0 +1,23 @@
+input.ng-invalid{
+    border:2px solid red;
+    box-shadow: 2px 2px 3px red;
+}
+input.ng-valid{
+    border: 2px solid green;
+    box-shadow: 2px 2px 2px green;
+}
+form.ng-valid{
+    border: 1px solid blue;
+    box-shadow: 2px 2px 5px blue;
+}
+form.ng-invalid{
+    border: 1px solid yellow;
+    box-shadow: 2px 2px 5px yellow;
+}
+form{
+    border: 2px solid gray;
+    width:220px;
+    height: 400px;
+    text-align: center;
+    
+}

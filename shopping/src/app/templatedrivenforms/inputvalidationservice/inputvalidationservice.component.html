@@ -1,0 +1,56 @@
+<div class="container-fluid">
+    <form #frmRegister="ngForm">
+        <h2>Register</h2>
+        <dl>
+            <dt>UserName</dt>
+            <dd>
+                <input type="text" name="UserName" ngModel #UserName="ngModel" required minlength="4" pattern="[a-zA-Z ]*" placeholder="Enter your Name">
+            </dd>
+            <dd class="text-danger" *ngIf="(UserName.invalid && frmRegister.submitted) || (UserName.touched && UserName.invalid)">
+                <span *ngIf="UserName.errors?.['required']">UserName Required</span>
+                <span *ngIf="UserName.errors?.['minlength']">Name too Short...</span>
+                <span *ngIf="UserName.errors?.['pattern']">Only Alphabets are Allowed</span>
+            </dd>
+            <dt>Age</dt>
+            <dd>
+                <input type="number" name="Age" ngModel #Age="ngModel" required>
+            </dd>
+            <dd class="text-danger" *ngIf="(Age.invalid && frmRegister.submitted || Age.touched && Age.invalid)">
+                <span>Age Required</span>
+            </dd>
+            
+            <dt>Mobile</dt>
+            <dd>
+                <input type="text" name="Mobile" ngModel #Mobile="ngModel" required pattern="\+91\d{10}">
+            </dd>
+            <dd class="text-danger" *ngIf="(Mobile.invalid && frmRegister.submitted || Mobile.touched && Mobile.invalid)">
+                <span *ngIf="Mobile.errors?.['required']">Mobile Number Required</span>
+                <span *ngIf="Mobile.errors?.['pattern']">Invalid Mobile Number</span>
+
+            </dd>
+            <dt>Password</dt>
+            <dd>
+                <input type="password" name="Password" ngModel #Password="ngModel" required minlength="8" maxlength="20" pattern="[A-Z]*\W*\d{6,18}*" >
+            </dd>
+            <dd class="text-danger" *ngIf="(Password.invalid && frmRegister.submitted || Password.touched && Password.invalid)">
+                <span *ngIf="Password.errors?.['required']">Password Required</span>
+                <span *ngIf="Password.errors?.['minlength']">Password too Short</span>
+                <span *ngIf="Password.errors?.['maxlength']">Password Not more than 20 Charecters</span>
+                <span *ngIf="Password.errors?.['pattern']">Invalid Password</span>
+                <span *ngIf="Password.errors?.['pattern']">Use UpperCase Letter</span>
+            </dd>
+            <dt>Email</dt>
+            <dd>
+                <input type="email" required name="Mail" ngModel #Mail="ngModel" value="email">
+            </dd>
+            <dd class="text-danger" *ngIf="(Mail.invalid && frmRegister.submitted || Mail.invalid && Mail.touched)">
+                <span *ngIf="Mail.errors?.['required']">Email Required</span>
+
+            </dd>
+        </dl>
+       
+        <button >Register</button>
+        
+    </form>
+
+</div>

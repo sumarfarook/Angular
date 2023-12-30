@@ -1,0 +1,61 @@
+<div class="container-fluid">
+    <div class="row">
+       <div class="col-6">
+        <h2>Class Binding</h2>
+        <dl>
+            <dt>Name</dt>
+            <dd><input type="text" [ngClass]="{'valid-style':UserName.valid,'invalid-style':UserName.invalid}" name="UserName" ngModel #UserName="ngModel" required class="form-control"></dd>
+            <dd *ngIf="UserName.invalid">
+                <span class="text-danger">Name Required</span>
+            </dd>
+        </dl>
+    
+        <h2 [ngClass]="['text-style','bg-style','border-style']">Sample Text</h2>
+        <h2>Your styles</h2>
+        <div>
+            <input type="text" name="effects" ngModel #effects="ngModel" placeholder="text-style,bg-style,border-style" class="form-control">
+            <h1 class="mt-4"[ngClass]="effects.value">Welcome to Angular</h1>
+        </div>
+        <div class="mt-5">
+            <h2>Check Box Your Styles</h2>
+            <ul class="list-unstyled">
+                <li>
+                    <input type="checkbox" name="textstyle" ngModel #textstyle="ngModel" class="form-check-input">Text Style
+                </li>
+                <li>
+                    <input type="checkbox" name="borderstyle" ngModel #borderstyle="ngModel"class="form-check-input">Border Style
+                </li>
+                <li>
+                    <input type="checkbox" name="bgstyle" ngModel #bgstyle="ngModel"class="form-check-input">Background Style
+                </li>
+    
+            </ul>
+            <h2 class="mt-5"[ngClass]="{'text-style':textstyle.value,'bg-style':bgstyle.value,'border-style':borderstyle.value}">Welcome to Frontend Development</h2>
+    
+        </div>
+       </div>
+    <div class="mt-3 col-6">
+        <h2>Theme</h2>
+        <div>
+            <form [ngClass]="{'dark-theme':theme.value}" class="p-3 w-50 border border-2 border-primary">
+                <div class="form-switch">
+                    <input type="checkbox" name="theme" ngModel #theme="ngModel" class="form-check-input">Dark Mode
+
+                </div>
+                <h2>User Login</h2>
+                <dl>
+                    <dt>User Name</dt>
+                    <dd>
+                        <input type="text" class="form-control">
+                    </dd>
+                    <dt>Password</dt>
+                    <dd><input type="password" class="form-control"></dd>
+                </dl>
+                <button [ngClass]="{'btn btn-light':theme.value}" class="btn btn-dark w-100">Login</button>
+            </form>
+        </div>
+
+        </div>
+
+    </div>
+</div>

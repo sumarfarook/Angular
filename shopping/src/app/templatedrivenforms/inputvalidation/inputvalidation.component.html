@@ -1,0 +1,43 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <form #frmRegister="ngForm">
+                <h2>Register</h2>
+                <dl>
+                    <dt>UserName</dt>
+                    <dd>
+                        <input type="text" name="UserName" ngModel #UserName="ngModel" required >
+                    </dd>
+                    <dd class="text-danger" *ngIf="UserName.invalid"></dd>
+                    <dt>Age</dt>
+                    <dd>
+                        <input type="number" name="Age" ngModel #Age="ngModel" required>
+                    </dd>
+                    <dd class="text-danger" *ngIf="Age.invalid"></dd>
+                </dl>
+
+            </form>
+
+        </div>
+        
+        <div class="col">
+            <h2>Input Validations</h2>
+            <dl>
+                <dt>field not modified</dt>
+                <dd>{{frmRegister.pristine}}</dd>
+                <dt>Fieldis modified</dt>
+                <dd>{{frmRegister.dirty}}</dd>
+                <dt>field is focus</dt>
+                <dd>{{frmRegister.touched}}</dd>
+                <dt>field is not focus</dt>
+                <dd>{{frmRegister.untouched}}</dd>
+                <dt>field is valid</dt>
+                <dd>{{frmRegister.valid}}</dd>
+                <dt>Field is not Valid</dt>
+                <dd>{{frmRegister.invalid}}</dd>
+            </dl>
+    
+        </div>
+    </div>
+
+</div>
